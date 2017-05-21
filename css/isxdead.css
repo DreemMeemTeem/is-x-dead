@@ -270,13 +270,15 @@ h2 {
   min-height: 80%;
   height: 100%;
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 5%;
   margin-bottom: 5%;
 
   /*Removes baked-in padding so the title spans across the entire card*/
   padding: 0px;
 
   overflow: scroll;
+
+  min-height: 300px;
 }
 
 .profile .card .card-divider:nth-child(1) {
@@ -289,7 +291,6 @@ h2 {
   width: 80%;
   height: 130%;
   /*change this url to whatever we grab from wikipedia*/
-  background: url('http://www.bransonshowtickets.com/media/3235117784_o.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -333,6 +334,7 @@ h2 {
   padding: 10px;
   max-width: 49vw;
   padding: 20px;
+  position: relative;
 }
 
 .description p {
@@ -389,6 +391,25 @@ h2 {
   margin-top: 6px;
   color: #cacaca;
 }
+
+#wikilink {
+  background-color: #767676;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1.3em;
+  display: block;
+  text-align: center;
+  width: 66%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#wikilink:hover {
+  cursor: pointer;
+  background-color: #666666;
+}
+
 
 @media only screen and (min-device-width : 801px) {
   body {
@@ -474,7 +495,8 @@ h2 {
 }
 
 /*Getting rid of the dab in between 800 and 1024px because it's broken and hard to fix for some reason*/
-@media only screen and (max-device-width : 1024px) {
+@media only screen and (max-device-width : 1024px),
+only screen and (orientation: portrait) {
   #dab {
     display: none!important;
   }

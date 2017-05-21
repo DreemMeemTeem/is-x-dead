@@ -1,3 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs><path d="M232.3 261.07L272.84 261.06L272.85 454.31L232.31 454.31L232.3 261.07Z" id="h1zfiANTeL"></path><path d="M384.57 261.34L425.11 260.85L427.48 454.07L386.95 454.57L384.57 261.34Z" id="bYWCO21tV"></path><path d="M268.78 454.31C273.26 454.31 276.89 457.94 276.89 462.42C276.89 464.04 276.89 460.79 276.89 462.42C276.89 466.89 273.26 470.52 268.78 470.52C250.4 470.52 203.38 470.52 185 470.52C180.52 470.52 176.89 466.89 176.89 462.42C176.89 460.79 176.89 464.04 176.89 462.42C176.89 457.94 180.52 454.31 185 454.31C203.38 454.31 250.4 454.31 268.78 454.31Z" id="a5A4nDVcDI"></path><path d="M473.04 454.31C477.52 454.31 481.15 457.94 481.15 462.42C481.15 464.04 481.15 460.79 481.15 462.42C481.15 466.89 477.52 470.52 473.04 470.52C454.66 470.52 407.64 470.52 389.26 470.52C384.78 470.52 381.15 466.89 381.15 462.42C381.15 460.79 381.15 464.04 381.15 462.42C381.15 457.94 384.78 454.31 389.26 454.31C407.64 454.31 454.66 454.31 473.04 454.31Z" id="aBMVJAeey"></path></defs><g><g><g><use xlink:href="#h1zfiANTeL" opacity="1" fill="#000000" fill-opacity="1"></use></g><g><use xlink:href="#bYWCO21tV" opacity="1" fill="#000000" fill-opacity="1"></use></g><g><use xlink:href="#a5A4nDVcDI" opacity="1" fill="#2982e9" fill-opacity="1"></use></g><g><use xlink:href="#aBMVJAeey" opacity="1" fill="#2982e9" fill-opacity="1"></use></g></g></g></svg>
+<svg width="640" height="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+ <defs>
+  <path id="h1zfiANTeL" d="m232.3,261.07l40.54,-0.01l0.01,193.25l-40.54,0l-0.01,-193.24z"/>
+  <path id="bYWCO21tV" d="m384.57,261.34l40.54,-0.49l2.37,193.22l-40.53,0.5l-2.38,-193.23z"/>
+  <path id="a5A4nDVcDI" d="m268.78,454.31c4.48,0 8.11,3.63 8.11,8.11c0,1.62 0,-1.63 0,0c0,4.47 -3.63,8.1 -8.11,8.1c-18.38,0 -65.4,0 -83.78,0c-4.48,0 -8.11,-3.63 -8.11,-8.1c0,-1.63 0,1.62 0,0c0,-4.48 3.63,-8.11 8.11,-8.11c18.38,0 65.4,0 83.78,0z"/>
+  <path id="aBMVJAeey" d="m473.04,454.31c4.48,0 8.11,3.63 8.11,8.11c0,1.62 0,-1.63 0,0c0,4.47 -3.63,8.1 -8.11,8.1c-18.38,0 -65.4,0 -83.78,0c-4.48,0 -8.11,-3.63 -8.11,-8.1c0,-1.63 0,1.62 0,0c0,-4.48 3.63,-8.11 8.11,-8.11c18.38,0 65.4,0 83.78,0z"/>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2">
+    <g id="svg_3">
+     <use id="svg_4" fill="#000000" xlink:href="#h1zfiANTeL"/>
+    </g>
+    <g id="svg_5">
+     <use id="svg_6" fill="#000000" xlink:href="#bYWCO21tV"/>
+    </g>
+    <g id="svg_7">
+     <use id="svg_8" fill="#2982e9" xlink:href="#a5A4nDVcDI"/>
+    </g>
+    <g id="svg_9">
+     <use id="svg_10" fill="#2982e9" xlink:href="#aBMVJAeey"/>
+    </g>
+   </g>
+  </g>
+  <rect id="svg_22" height="152" width="40.5" y="120" x="232.5" stroke-width="0" stroke="#fff" fill="#000"/>
+  <rect stroke="#fff" id="svg_23" height="152" width="40.5" y="120" x="384.5" stroke-width="0" fill="#000"/>
+ </g>
+</svg>

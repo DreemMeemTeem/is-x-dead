@@ -41,7 +41,7 @@ window.onhashchange = function() {
         if (person.image) {
           $('.profilepic').css('background-image', 'url(' + person.image + ')').show();
         } else {
-          $('.profilepic').hide();
+          $('.profilepic').css('background-image', 'url(http://placehold.it/512x512)').show();
         }
 
 
