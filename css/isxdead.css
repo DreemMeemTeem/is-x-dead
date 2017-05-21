@@ -347,3 +347,9 @@ a:focus {
   }
 
 }
+
+
+
+#search-dropdown:blank {
+  display: none;
+}
