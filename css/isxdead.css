@@ -470,12 +470,8 @@ h2 {
 
 }
 
-#confetti,#dab {
-  display: none;
-}
-
 .alive-celebration {
-  display: inline;
+  display: none;
 }
 /*Also insert a random quip from idk.js in h2 in .row*/
 

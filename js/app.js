@@ -32,6 +32,7 @@ window.onhashchange = function() {
   if (location.hash.length > 1) {
     textBox.attr('placeholder', '');
     var id = unPrettifyId(location.hash.slice(1));
+    $('.alive-celebration').hide();
     $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/query?ids=' + id, function(people) {
       if (people.hasOwnProperty(id)) {
         var person = people[id];
@@ -68,6 +69,7 @@ window.onhashchange = function() {
         if (person.status === 'alive') {
           $('#yod').parent().hide();
           $('#age').prev().text('Age');
+          $('.alive-celebration').show();
         } else if (person.status === 'dead') {
           $('#yod').parent().show();
           $('#age').prev().text('Age at death');
