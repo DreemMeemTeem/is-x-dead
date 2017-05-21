@@ -51,12 +51,12 @@ window.onhashchange = function() {
 
 
         if (person.birthYear) {
-          $('#yob').text(person.birthYear);
+          $('#yob').text(formatYear(person.birthYear));
         } else {
           $('#yob').text('Unknown');
         }
         if (person.deathYear) {
-          $('#yod').text(person.deathYear);
+          $('#yod').text(formatYear(person.deathYear));
         } else {
           $('#yod').text('Unknown');
         }
@@ -158,4 +158,8 @@ function prettifyId(id) {
 
 function unPrettifyId(id) {
   return '/' + id.replace(':', '/')
+}
+
+function formatYear(year) {
+  return year < 1000 ? year + ' C.E.' : year;
 }
