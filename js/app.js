@@ -20,13 +20,8 @@ textBox.on('input', function() {
   }
 });
 textBox.focus(function() {
-  console.log('focus')
   searchDropdown.addClass('is-open');
 });
-/*textBox.focusout(function() {
-  console.log('blur')
-  searchDropdown.removeClass('is-open');
-});*/
 
 window.onhashchange = function() {
   if (location.hash.length > 1) {
@@ -144,7 +139,6 @@ function loadStatuses() {
   }).toArray();
   if (ids.length > 0) {
     $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/query?ids=' + ids.join(','), function(people) {
-      console.log(people)
       for (id in people) {
         var person = people[id];
         personCache[id] = person;
