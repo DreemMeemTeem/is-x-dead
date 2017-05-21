@@ -162,11 +162,11 @@ a:focus {
   margin: 0 auto;
 }
 
-.alive {
+.result.alive {
   color: #3adb76;
 }
 
-.alive::before {
+.result.alive::before {
   content: "No";
   font-size: 2em;
   line-height: 80%;
@@ -174,11 +174,11 @@ a:focus {
   text-align: center;
 }
 
-.dead {
+.result.dead {
   color: #cc4b37;
 }
 
-.dead::before {
+.result.dead::before {
   content: "Yes";
   font-size: 2em;
   line-height: 80%;
@@ -186,11 +186,11 @@ a:focus {
   text-align: right;
 }
 
-.unknownresult {
+.result.unknown {
   color: #cacaca;
 }
 
-.unknownresult::before {
+.result.unknown::before {
   content: "?";
   font-size: 2em;
   line-height: 80%;
