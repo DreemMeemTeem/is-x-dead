@@ -186,6 +186,18 @@ a:focus {
   text-align: right;
 }
 
+.unknownresult {
+  color: #cacaca;
+}
+
+.unknownresult::before {
+  content: "?";
+  font-size: 2em;
+  line-height: 80%;
+  width: 100%;
+  text-align: right;
+}
+
 .double-bounce {
   width: 40px;
   height: 40px;
