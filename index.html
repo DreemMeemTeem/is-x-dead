@@ -10,6 +10,7 @@ Classes-
 status ____ columns: dead, alive, unknown
 spinner ____: [blank], doneload
 result _____: isalive, isdead (after you change spinner)
+.profile .card .name::after: change content to wikipedia article name
 
 CSS-
 .profilepic: change "background: url()" to image of person
@@ -36,7 +37,8 @@ HTML-
       <!--Main page start-->
       <header>
         <div class="input-group row align-center">
-          <button class="button" type="button" data-toggle="example-dropdown">Toggle Dropdown</button>
+          <!--Uncomment if you want to test the search prediction dropdown-->
+          <!--<button class="button" type="button" data-toggle="example-dropdown">Toggle Dropdown</button>-->
           <div class="dropdown-pane vertical menu" id="example-dropdown" data-dropdown data-auto-focus="true">
 
             <!--Menu item start-->
@@ -76,7 +78,7 @@ HTML-
       <!--Status page begin-->
       <!--Because the page is using flexbox, removing/adding the status page elements should not break anything.-->
       <!--Three statuses are alive, dead, and unknown-->
-      <div class="status dead columns"></div>
+      <div class="status unknown columns"></div>
 
       <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
       <div class="profile row align-middle">
@@ -84,8 +86,7 @@ HTML-
           <div class="profilepic"></div>
         </div>
         <div class="card small-12 large-expand columns shrink">
-          <div class="card-divider">
-            Michael Jackson
+          <div class="card-divider name">
           </div>
           <div class="description">
             <p>

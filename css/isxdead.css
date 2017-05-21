@@ -223,7 +223,8 @@ a:focus {
   padding: 0px;
 }
 
-.profile .card .card-divider:nth-child(1) {
+.profile .card .name::after {
+  content: "Michael Jackson";
   font-size: 2em;
   text-align: center;
 
