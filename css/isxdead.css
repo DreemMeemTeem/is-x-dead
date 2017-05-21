@@ -149,14 +149,14 @@ a:focus {
   margin-top: 30px;
 }
 
-.isdead {
+.result.dead {
   background: url(../img/dead.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.isalive {
+.result.alive {
   background: url(../img/alive.png);
   background-position: center center;
   background-repeat: no-repeat;

@@ -4,7 +4,6 @@ var searchDropdown = $('#search-dropdown');
 var textBox = $('#middle-label');
 textBox.get(0).onclick = undefined;
 textBox.on('input', function() {
-  console.log(textBox.val())
   if (textBox.val().length > 0) {
     autocompleteText();
   } else {
@@ -17,24 +16,26 @@ textBox.blur(function() {
 })
 
 function autocompleteText() {
-  $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/autocomplete?query=' + textBox.val(), function(data){
+  $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/autocomplete?query=' + textBox.val(), function(data) {
     searchDropdown.empty();
     data.forEach(function(person) {
       var prettyId = prettifyId(person.id);
-      var aElem = $('<a>').prop('id', prettyId).prop('href', window.location + '/#' + prettyId);
+      var aElem = $('<a>').attr('person-id', prettyId).prop('href', window.location + '/#' + prettyId);
       var liElem = $('<li>');
       if (person.image) {
         liElem.append($('<img>').prop('src', person.image));
       }
-      liElem.append($('<div>').append($('<b>').text(person.name)).append($('<p>').text(person.description)));
+      liElem.append($('<hgroup>').append($('<b>').text(person.name)).append($('<p>').text(person.description)));
+      liElem.append($('<div>').addClass('status').append($('<div>').addClass('spinner')).append($('<div>').addClass('result')));
       aElem.append(liElem);
       searchDropdown.append(aElem);
     });
     searchDropdown.addClass('is-open');
+    loadStatuses();
   });
-  
-  
-  
+
+
+
   /*
             <a href="http://google.com">
               <li>
@@ -54,6 +55,25 @@ function autocompleteText() {
               </li>
             </a>
   */
+}
+
+function loadStatuses() {
+  var ids = searchDropdown.children().map(function() {
+    return unPrettifyId($(this).attr('person-id'))
+  }).toArray();
+  $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/query?ids=' + ids.join(','), function(people) {
+    console.log(people)
+    for (id in people) {
+      console.log(id)
+      var person = people[id];
+      var elem = searchDropdown.find('[person-id="' + prettifyId(id) + '"]');
+      console.log(elem)
+      if (elem) {
+        elem.find('.spinner').hide();
+        elem.find('.result').addClass(person.status).show();
+      }
+    }
+  });
 }
 
 function prettifyId(id) {
