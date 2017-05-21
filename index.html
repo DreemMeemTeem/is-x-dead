@@ -1,3 +1,26 @@
+<!--Stuff to fill in with variables:
+
+IDs (change content)-
+dob: date of birth
+dod: date of death
+age: age when they died
+alivestatus: are they still alive? (yes/no)
+
+Classes-
+status ____ columns: dead, alive, unknown
+spinner ____: [blank], doneload
+result _____: isalive, isdead (after you change spinner)
+
+CSS-
+.profilepic: change "background: url()" to image of person
+
+HTML-
+<img src="____" / /> in the menu items: change url to image of person (same as .profilepic)
+<hgroup><p> in the menu items: change content of p to short description of person
+<div class="description"><p> in the description card: change content of p to wikipedia description of person
+
+-->
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -53,7 +76,7 @@
       <!--Status page begin-->
       <!--Because the page is using flexbox, removing/adding the status page elements should not break anything.-->
       <!--Three statuses are alive, dead, and unknown-->
-      <div class="status unknown columns"></div>
+      <div class="status dead columns"></div>
 
       <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
       <div class="profile row align-middle">
@@ -72,19 +95,19 @@
               <tbody>
                 <tr>
                   <td>Alive:</td>
-                  <td>Yes</td>
+                  <td id="alivestatus">Yes</td>
                 </tr>
                 <tr>
                   <td>Date of Birth:</td>
-                  <td>August 13th, 1999</td>
+                  <td id="dob">August 13th, 1999</td>
                 </tr>
                 <tr>
                   <td>Date of Death:</td>
-                  <td>May 20th, 2017</td>
+                  <td id="dod">May 20th, 2017</td>
                 </tr>
                 <tr>
                   <td>Age (If Alive):</td>
-                  <td>17</td>
+                  <td id="age">17</td>
                 </tr>
               </tbody>
             </table>
