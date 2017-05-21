@@ -470,6 +470,15 @@ h2 {
 
 }
 
+#confetti,#dab {
+  display: none;
+}
+
+.alive-celebration {
+  display: inline;
+}
+/*Also insert a random quip from idk.js in h2 in .row*/
+
 /*Getting rid of the dab in between 800 and 1024px because it's broken and hard to fix for some reason*/
 @media only screen and (min-device-width : 800px) and (max-device-width : 1024px) {
   .profilepic #dab {
