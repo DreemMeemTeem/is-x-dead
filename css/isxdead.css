@@ -387,6 +387,7 @@ h2 {
   width: 200%;
   margin-left: -50%;
   margin-top: 6px;
+  color: #cacaca;
 }
 
 @media only screen and (min-device-width : 801px) {
