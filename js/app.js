@@ -20,7 +20,8 @@ function autocompleteText() {
     searchDropdown.empty();
     data.forEach(function(person) {
       var prettyId = prettifyId(person.id);
-      var aElem = $('<a>').attr('person-id', prettyId).prop('href', window.location + '/#' + prettyId);
+      /*Changed a to span here to get ready for onClick*/
+      var aElem = $('<span>').attr('person-id', prettyId)/*.prop('href', window.location + '/#' + prettyId)*/;
       var liElem = $('<li>');
       if (person.image) {
         liElem.append($('<img>').prop('src', person.image));
