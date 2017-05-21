@@ -54,7 +54,13 @@ HTML-
       <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
       <div class="profile row align-middle">
         <div class="columns small-12 large-expand">
-          <div class="profilepic"></div>
+          <div class="profilepic">
+            <!--Set "dab" to display: none if the guy is dead-->
+            <div id="dab">
+              <div id="leftarm"></div>
+              <div id="rightarm"></div>
+            </div>
+          </div>
         </div>
         <div class="card small-12 large-expand columns shrink">
           <div class="card-divider">

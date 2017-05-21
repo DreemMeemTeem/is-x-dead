@@ -259,6 +259,7 @@ a:focus {
   padding: 0px;
 
   overflow: scroll;
+  z-index: -7;
 }
 
 .profile .card .card-divider:nth-child(1) {
@@ -277,6 +278,33 @@ a:focus {
   background-size: cover;
   margin: 0 auto;
   border-radius: 5px;
+}
+
+.profilepic #dab #leftarm {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  width: 30vw;
+  height: 30vw;
+  left: -5vw;
+  top: 40vmin;
+  background: url(../img/leftarm.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.profilepic #dab #rightarm {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  width: 30vw;
+  height: 30vw;
+  left: 30vw;
+  top: 35vmin;
+  background: url(../img/rightarm.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 
 .description {
