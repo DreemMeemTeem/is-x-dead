@@ -65,6 +65,12 @@ window.onhashchange = function() {
         } else {
           $('#age').text('Unknown');
         }
+        if (person.link) {
+          $('#wikilink').show();
+          $('#wikilink').attr('href', person.link);
+        } else {
+          $('#wikilink').hide();
+        }
 
         if (person.status === 'alive') {
           $('#yod').parent().hide();
@@ -89,6 +95,7 @@ window.onhashchange = function() {
           $('#yob').text('Unknown');
           $('#yod').text('Unknown');
           $('#age').text('Unknown');
+          $('#wikilink').hide();
           $('.profile').show();
         } else {
           textBox.attr('placeholder', '?????');
