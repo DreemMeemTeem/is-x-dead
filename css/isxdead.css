@@ -351,7 +351,8 @@ h2 {
 
 .status.alive {
   border: 5px solid #3adb76;
-  color: #3adb76;
+  background-color: #3adb76;
+  color: #fefefe;
 }
 
 .status.alive::before {
@@ -360,7 +361,8 @@ h2 {
 
 .status.dead {
   border: 5px solid #cc4b37;
-  color: #cc4b37;
+  background-color: #cc4b37;
+  color: #fefefe;
 }
 
 .status.dead::before {
@@ -369,7 +371,8 @@ h2 {
 
 .status.unknown {
   border: 5px solid #cacaca;
-  color: #cacaca;
+  background-color: #cacaca;
+  color: #fefefe;
 }
 
 .status.unknown::before {
