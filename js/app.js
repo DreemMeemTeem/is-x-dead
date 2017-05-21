@@ -2,31 +2,46 @@ $(document).foundation();
 
 var searchDropdown = $('#search-dropdown');
 var textBox = $('#middle-label');
-textBox.get(0).onclick = undefined;
+
+var personCache = {};
+
+//textBox.get(0).onclick = undefined;
 textBox.on('input', function() {
   if (textBox.val().length > 0) {
     autocompleteText();
   } else {
     searchDropdown.removeClass('is-open');
   }
-})
+});
+textBox.focus(function() {
+  console.log('focus')
+  searchDropdown.addClass('is-open');
+});
 textBox.blur(function() {
   console.log('blur')
   searchDropdown.removeClass('is-open');
-})
+});
+
+window.onhashchange = function() {
+  console.log(location.hash)
+};
 
 function autocompleteText() {
   $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/autocomplete?query=' + textBox.val(), function(data) {
     searchDropdown.empty();
     data.forEach(function(person) {
       var prettyId = prettifyId(person.id);
-      var aElem = $('<a>').attr('person-id', prettyId).prop('href', window.location + '/#' + prettyId);
+      var aElem = $('<a>').attr('person-id', prettyId).prop('href', '#' + prettyId);
       var liElem = $('<li>');
       if (person.image) {
         liElem.append($('<img>').prop('src', person.image));
       }
       liElem.append($('<hgroup>').append($('<b>').text(person.name)).append($('<p>').text(person.description)));
       liElem.append($('<div>').addClass('status').append($('<div>').addClass('spinner')).append($('<div>').addClass('result')));
+      aElem.click(function() {
+        console.log(window.location.hash)
+        window.location.hash = $(this).attr('person-id');
+      })
       aElem.append(liElem);
       searchDropdown.append(aElem);
     });
@@ -66,6 +81,7 @@ function loadStatuses() {
     for (id in people) {
       console.log(id)
       var person = people[id];
+      personCache[id] = person;
       var elem = searchDropdown.find('[person-id="' + prettifyId(id) + '"]');
       console.log(elem)
       if (elem) {
