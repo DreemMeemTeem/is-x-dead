@@ -35,12 +35,12 @@ window.onhashchange = function() {
     $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/query?ids=' + id, function(people) {
       if (people.hasOwnProperty(id)) {
         var person = people[id];
-        
+
 
         var label = person.name || personNames[id] || '';
         textBox.val(label);
         $('#person-name').text(label);
-        
+
         $('#status-display').removeClass('alive dead unknown').addClass(person.status);
         if (person.image) {
           $('.profilepic').css('background-image', 'url(' + person.image + ')').show();
@@ -75,15 +75,23 @@ window.onhashchange = function() {
           $('#yod').parent().show();
           $('#age').prev().text('Age');
         }
-
-        console.log(person)
+        $('.profile').show();
       } else {
-        textBox.val('placeholder', personNames[id] || '');
-        $('#person-name').text(personNames[id] || '');
-        
-        $('#yob').text('Unknown');
-        $('#yod').text('Unknown');
-        $('#age').text('Unknown');
+        var label = personNames[id];
+        if (label) {
+          textBox.val(label);
+          $('#person-name').text(label);
+          $('#status-display').removeClass('alive dead unknown').addClass('unknown');
+          $('.profilepic').hide();
+
+          $('#yob').text('Unknown');
+          $('#yod').text('Unknown');
+          $('#age').text('Unknown');
+          $('.profile').show();
+        } else {
+          textBox.attr('placeholder', '?????');
+          $('.profile').hide();
+        }
       }
       statusPage.show();
     });
