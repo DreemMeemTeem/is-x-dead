@@ -228,12 +228,23 @@ a:focus {
 /* Status page */
 /*-------------*/
 
+h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  color: #cacaca;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+
+
 .status {
   width: 200px;
   height: 100px;
   margin: 20px;
   margin: 0 auto;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 .profile {
@@ -284,10 +295,6 @@ a:focus {
   position: absolute;
   min-width: 100px;
   min-height: 100px;
-  width: 30vw;
-  height: 30vw;
-  left: -5vw;
-  top: 40vmin;
   background: url(../img/leftarm.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -297,10 +304,6 @@ a:focus {
   position: absolute;
   min-width: 100px;
   min-height: 100px;
-  width: 30vw;
-  height: 30vw;
-  left: 30vw;
-  top: 35vmin;
   background: url(../img/rightarm.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -343,7 +346,7 @@ a:focus {
   margin-top: 6px;
 }
 
-@media only screen and (min-device-width : 1001px) {
+@media only screen and (min-device-width : 801px) {
   body {
     overflow: hidden;
   }
@@ -357,11 +360,26 @@ a:focus {
   .input-group-label,.input-group-field {
     font-size: 4.5vmax;
   }
+
+  .profilepic #dab #leftarm {
+    width: 30vw;
+    height: 30vw;
+    left: -5vw;
+    top: 40vmin;
+  }
+
+  .profilepic #dab #rightarm {
+    width: 30vw;
+    height: 30vw;
+    left: 30vw;
+    top: 35vmin;
+  }
 }
 
-@media only screen and (max-device-width : 1000px) {
+@media only screen and (max-device-width : 800px) {
   body {
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   .input-group {
@@ -392,9 +410,28 @@ a:focus {
     max-width: 60vw;
   }
 
+  .profilepic #dab #leftarm {
+    width: 30vw;
+    height: 30vw;
+    left: 0vw;
+    top: 70vmin;
+  }
+
+  .profilepic #dab #rightarm {
+    width: 30vw;
+    height: 30vw;
+    right: 0vw;
+    top: 70vmin;
+  }
+
 }
 
-
+/*Getting rid of the dab in between 800 and 1024px because it's broken and hard to fix for some reason*/
+@media only screen and (min-device-width : 800px) and (max-device-width : 1024px) {
+  .profilepic #dab {
+    display: none;
+  }
+}
 
 #search-dropdown:blank {
   display: none;
