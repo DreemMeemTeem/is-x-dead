@@ -1,0 +1,349 @@
+* {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:link {
+  color: black;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+
+}
+
+/*---------------*/
+/* Input Styling */
+/*---------------*/
+
+header {
+  background-color: #1779ba;
+  -webkit-box-shadow: 0px 2px 0px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 2px 0px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 0px 1px rgba(0,0,0,0.1);
+}
+
+.input-group {
+  margin-bottom: 3vh;
+  transition: 0.2s;
+}
+
+#container .input-group {
+  flex: 1 1 auto;
+}
+
+.input-group-label {
+  background: none;
+  border-style: none;
+  color: white;
+  line-height: 10vmin;
+
+}
+
+.input-group-field {
+  /*border: 1px solid #ededed;*/
+  border-style: none;
+  box-shadow: none;
+  transition: 0.2s;
+  height: 10vmin;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(1,1,1,0);
+  color: white;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
+}
+
+.input-group-field:focus {
+  border-style: none;
+  box-shadow: none;
+  transition: 0.2s;
+  background-color: rgba(200,200,200,0.1);
+}
+
+/*Centers the placeholder text.*/
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+
+.input-group-button {
+  display: none;
+}
+
+/*-------------------*/
+/* Drop-down Styling */
+/*-------------------*/
+
+a:focus {
+  outline:0;
+}
+
+.dropdown-pane {
+  padding: 0px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.dropdown-pane a li:hover {
+    background: rgba(200,200,200,0.4)!important;
+}
+
+.dropdown-pane li {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-pane li:hover {
+}
+
+.dropdown-pane img {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-right: 5px;
+}
+.dropdown-pane hgroup {
+  float: left;
+  width: auto;
+  max-width: 40vw;
+}
+
+.dropdown-pane .status {
+  float: right;
+  width: 2vw;
+  height: 2vw;
+  margin-right: 20px;
+
+}
+
+/*Loading spinner*/
+
+.doneload {
+  display: none;
+}
+
+.spinner,.result {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.isdead {
+  background: url(../img/dead.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.isalive {
+  background: url(../img/alive.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.double-bounce {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/*-------------*/
+/* Status page */
+/*-------------*/
+
+.status {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  margin: 0 auto;
+}
+
+.profile {
+  height: 40vh;
+  margin-top: 4vh;
+  max-width: 90vw!important;
+}
+
+/*Drop-shadow on the card*/
+.profile .card {
+  -webkit-box-shadow: -1px 1px 0px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: -1px 1px 0px 1px rgba(0,0,0,0.1);
+  box-shadow: -1px 1px 0px 1px rgba(0,0,0,0.1);
+
+  /*For when the two columns stack in portrait orientation*/
+  min-height: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  /*Removes baked-in padding so the title spans across the entire card*/
+  padding: 0px;
+}
+
+.profile .card .card-divider:nth-child(1) {
+  font-size: 2em;
+  text-align: center;
+
+}
+
+.profilepic {
+  width: 80%;
+  height: 80%;
+  /*change this url to whatever we grab from wikipedia*/
+  background: url('http://www.bransonshowtickets.com/media/3235117784_o.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.description {
+  padding: 10px;
+  max-width: 49vw;
+  padding: 20px;
+}
+
+.alive {
+  border: 5px solid #3adb76;
+  color: #3adb76;
+}
+
+.alive::before {
+  content: "No";
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 6em;
+  line-height: 90px;
+  width: 100%;
+}
+
+.dead {
+  border: 5px solid #cc4b37;
+  color: #cc4b37;
+}
+
+.dead::before {
+  content: "Yes";
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 6em;
+  line-height: 90px;
+  width: 100%;
+}
+
+.unknown {
+  border: 5px solid #cacaca;
+  color: #cacaca;
+}
+
+.unknown::before {
+  content: "?";
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 6em;
+  line-height: 90px;
+  width: 100%;
+}
+
+.unknown::after {
+  content: "Is X Dead could not determine if the individual is alive or not.";
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 200%;
+  margin-left: -50%;
+  margin-top: 6px;
+}
+
+@media only screen and (min-device-width : 1001px) {
+  body {
+    overflow: hidden;
+  }
+
+  .input-group {
+    max-width: 70vw;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .input-group-label,.input-group-field {
+    font-size: 5vmax;
+  }
+}
+
+@media only screen and (max-device-width : 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .input-group {
+    max-width: 80vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .input-group-label,.input-group-field {
+    font-size: 3vmax;
+  }
+
+  /*Makes the description card fit the width of the profile picture on portrait orientation*/
+
+  .profile .card {
+    min-width: 70vw;
+  }
+
+  .profile .card * {
+    margin: 0 auto;
+  }
+
+  .profile .card .card-divider {
+    width: 100%;
+  }
+
+}
