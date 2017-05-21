@@ -109,27 +109,25 @@ window.onhashchange = function() {
   }
 };
 
-function displayDetails(id) {
-
-}
-
 function autocompleteText() {
   $.getJSON('https://uprvn9yff5.execute-api.us-east-1.amazonaws.com/v1/autocomplete?query=' + textBox.val(), function(data) {
     searchDropdown.empty();
     data.forEach(function(person) {
-      var prettyId = prettifyId(person.id);
-      var spanElem = $('<span>').attr('person-id', prettyId);
-      var liElem = $('<li>');
-      if (person.image) {
-        liElem.append($('<img>').prop('src', person.image));
+      if (person.name) {
+        var prettyId = prettifyId(person.id);
+        var spanElem = $('<span>').attr('person-id', prettyId);
+        var liElem = $('<li>');
+        if (person.image) {
+          liElem.append($('<img>').prop('src', person.image));
+        }
+
+        personNames[person.id] = person.name;
+
+        liElem.append($('<hgroup>').append($('<b>').text(person.name)).append($('<p>').text(person.description)));
+        liElem.append($('<div>').addClass('status').append($('<div>').addClass('result unknown')));
+        spanElem.append(liElem);
+        searchDropdown.append(spanElem);
       }
-
-      personNames[person.id] = person.name;
-
-      liElem.append($('<hgroup>').append($('<b>').text(person.name)).append($('<p>').text(person.description)));
-      liElem.append($('<div>').addClass('status').append($('<div>').addClass('result unknown')));
-      spanElem.append(liElem);
-      searchDropdown.append(spanElem);
     });
     searchDropdown.addClass('is-open');
     loadStatuses();
