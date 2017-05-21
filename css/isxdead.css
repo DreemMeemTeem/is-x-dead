@@ -310,6 +310,16 @@ h2 {
   z-index: -5;
 }
 
+.profilepic #dab #legs {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  background: url(../img/legs.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
+}
+
 .description {
   padding: 10px;
   max-width: 49vw;
@@ -373,6 +383,13 @@ h2 {
     height: 30vw;
     left: 30vw;
     top: 35vmin;
+  }
+
+  .profilepic #dab #legs {
+    width: 30vw;
+    height: 30vw;
+    left: 10vw;
+    top: 55vmin;
   }
 }
 
