@@ -46,48 +46,41 @@ HTML-
       </div>
       <!--Main page end-->
 
-      <!--Status page begin-->
-      <!--Because the page is using flexbox, removing/adding the status page elements should not break anything.-->
-      <!--Three statuses are alive, dead, and unknown-->
-      <div class="status unknown columns"></div>
+      <div id="status-page">
+        <!--Status page begin-->
+        <!--Because the page is using flexbox, removing/adding the status page elements should not break anything.-->
+        <!--Three statuses are alive, dead, and unknown-->
+        <div id="status-display" class="status unknown columns"></div>
 
-      <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
-      <div class="profile row align-middle">
-        <div class="columns small-12 large-expand">
-          <div class="profilepic"></div>
+        <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
+        <div class="profile row align-middle">
+          <div class="columns small-12 large-expand">
+            <div class="profilepic"></div>
+          </div>
+          <div class="card small-12 large-expand columns shrink">
+            <div id="person-name" class="card-divider"></div>
+            <div class="description">
+              <table class="hover card-divider">
+                <tbody id="data-table">
+                  <tr>
+                    <td>Born</td>
+                    <td id="yob"></td>
+                  </tr>
+                  <tr>
+                    <td>Died</td>
+                    <td id="yod"></td>
+                  </tr>
+                  <tr>
+                    <td>Age</td>
+                    <td id="age">17</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
         </div>
-        <div class="card small-12 large-expand columns shrink">
-          <div class="card-divider">
-            Michael Jackson
-          </div>
-          <div class="description">
-            <p>
-              Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer, songwriter, record producer, dancer, actor, and philanthropist. Called the "King of Pop", his contributions to music, dance, and fashion along with his publicized personal life made him a global figure in popular culture for over four decades.
-            </p>
-            <table class="hover card-divider">
-              <tbody>
-                <tr>
-                  <td>Alive:</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>Date of Birth:</td>
-                  <td>August 13th, 1999</td>
-                </tr>
-                <tr>
-                  <td>Date of Death:</td>
-                  <td>May 20th, 2017</td>
-                </tr>
-                <tr>
-                  <td>Age (If Alive):</td>
-                  <td>17</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-      </div>
 
-      <!--Status page end-->
+        <!--Status page end-->
+      </div>
     </div>
 
     <script src="js/vendor/jquery.js"></script>

@@ -106,7 +106,11 @@ a:focus {
   border-radius: 0px 0px 10px 10px!important;
 }
 
-.dropdown-pane span li:hover {
+.dropdown-pane span {
+  display: block;
+}
+
+.dropdown-pane span:hover {
     background: rgba(200,200,200,0.4)!important;
     cursor: pointer;
 }
@@ -158,8 +162,10 @@ a:focus {
 
 /*Loading spinner*/
 
-.spinner,.result {
+.spinner, .result {
   margin: 0 auto;
+  text-align: center;
+  width: 100%;
 }
 
 .result.alive {
@@ -171,7 +177,6 @@ a:focus {
   font-size: 2em;
   line-height: 80%;
   width: 100%;
-  text-align: center;
 }
 
 .result.dead {
@@ -183,7 +188,6 @@ a:focus {
   font-size: 2em;
   line-height: 80%;
   width: 100%;
-  text-align: right;
 }
 
 .result.unknown {
@@ -195,7 +199,6 @@ a:focus {
   font-size: 2em;
   line-height: 80%;
   width: 100%;
-  text-align: right;
 }
 
 .double-bounce {
@@ -227,6 +230,10 @@ a:focus {
 /*-------------*/
 /* Status page */
 /*-------------*/
+
+#status-page {
+  display: none;
+}
 
 .status {
   width: 200px;
@@ -290,13 +297,7 @@ a:focus {
   overflow: scroll;
 }
 
-.unknown {
-  border: 5px solid #cacaca;
-  color: #cacaca;
-}
-
-.unknown::before {
-  content: "?";
+.status::before {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -305,7 +306,34 @@ a:focus {
   width: 100%;
 }
 
-.unknown::after {
+.status.alive {
+  border: 5px solid #3adb76;
+  color: #3adb76;
+}
+
+.status.alive::before {
+  content: "No";
+}
+
+.status.dead {
+  border: 5px solid #cc4b37;
+  color: #cc4b37;
+}
+
+.status.dead::before {
+  content: "Yes";
+}
+
+.status.unknown {
+  border: 5px solid #cacaca;
+  color: #cacaca;
+}
+
+.status.unknown::before {
+  content: "?";
+}
+
+.status.unknown::after {
   content: "Is X Dead could not determine if the individual is alive or not.";
   display: inline-block;
   vertical-align: middle;
