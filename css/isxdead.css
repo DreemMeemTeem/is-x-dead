@@ -231,21 +231,31 @@ a:focus {
 /* Status page */
 /*-------------*/
 
+h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  color: #cacaca;
+  font-weight: 500;
+  font-size: 5em;
+}
+
 #status-page {
   display: none;
 }
 
 .status {
-  width: 200px;
+  width: 600px;
   height: 100px;
   margin: 20px;
   margin: 0 auto;
-  margin-bottom: 150px;
 }
 
 .profile {
   height: 40vh;
   margin-top: 4vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
   max-width: 90vw!important;
 }
 
@@ -279,11 +289,42 @@ a:focus {
   height: 100%;
   /*change this url to whatever we grab from wikipedia*/
   background: url('http://www.bransonshowtickets.com/media/3235117784_o.jpg');
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
   border-radius: 5px;
+
+  margin-right: 10vw;
+}
+
+.profilepic #dab #leftarm {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  background: url(../img/leftarm.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.profilepic #dab #rightarm {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  background: url(../img/rightarm.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
+}
+
+.profilepic #dab #legs {
+  position: absolute;
+  min-width: 100px;
+  min-height: 100px;
+  background: url(../img/legs.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 
 .description {
@@ -343,7 +384,7 @@ a:focus {
   margin-top: 6px;
 }
 
-@media only screen and (min-device-width : 1001px) {
+@media only screen and (min-device-width : 801px) {
   body {
     overflow: hidden;
   }
@@ -357,9 +398,30 @@ a:focus {
   .input-group-label,.input-group-field {
     font-size: 4.5vmax;
   }
+
+  .profilepic #dab #leftarm {
+    width: 30vw;
+    height: 30vw;
+    left: -5vw;
+    top: 40vmin;
+  }
+
+  .profilepic #dab #rightarm {
+    width: 30vw;
+    height: 30vw;
+    left: 30vw;
+    top: 35vmin;
+  }
+
+  .profilepic #dab #legs {
+    width: 30vw;
+    height: 30vw;
+    left: 10vw;
+    top: 55vmin;
+  }
 }
 
-@media only screen and (max-device-width : 1000px) {
+@media only screen and (max-device-width : 800px) {
   body {
     overflow-x: hidden;
   }
@@ -392,8 +454,32 @@ a:focus {
     max-width: 60vw;
   }
 
+  .profilepic #dab #leftarm {
+    width: 30vw;
+    height: 30vw;
+    left: 3vw;
+    top: 70vmin;
+  }
+
+  .profilepic #dab #rightarm {
+    width: 30vw;
+    height: 30vw;
+    right: 5vw;
+    top: 70vmin;
+  }
+
 }
 
+/*Getting rid of the dab in between 800 and 1024px because it's broken and hard to fix for some reason*/
+@media only screen and (min-device-width : 800px) and (max-device-width : 1024px) {
+  .profilepic #dab {
+    display: none;
+  }
+}
+
+#search-dropdown:blank {
+  display: none;
+}
 
 
 #search-dropdown:blank {

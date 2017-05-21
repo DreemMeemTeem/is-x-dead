@@ -28,6 +28,8 @@ HTML-
     <link rel="stylesheet" href="css/isxdead.css">
   </head>
   <body>
+    <!-- Set #confetti to display:none if they're dead-->
+    <canvas id="confetti" width="1" height="1" style="position:fixed;z-index:-10"></canvas>
     <div id="container">
       <!--Main page start-->
       <header>
@@ -52,12 +54,21 @@ HTML-
         <!--Three statuses are alive, dead, and unknown-->
         <div id="status-display" class="status unknown columns"></div>
 
+        <div class="row"><h2>[quip]</h2></div>
+
         <!--This is the profile itself. It consists of two columns; the left one, which resizes as much as it needs, and the right, which shrinks as needed.-->
         <div class="profile row align-middle">
           <div class="columns small-12 large-expand">
-            <div class="profilepic"></div>
+            <div class="profilepic">
+              <!--Set "dab" to display: none if the guy is dead-->
+              <div id="dab">
+                <div id="leftarm"></div>
+                <div id="rightarm"></div>
+                <div id="legs"></div>
+              </div>
+            </div>
           </div>
-          <div class="card small-12 large-expand columns shrink">
+          <div class="card small-12 large-expand columns">
             <div id="person-name" class="card-divider"></div>
             <div class="description">
               <table class="hover card-divider">
@@ -83,6 +94,7 @@ HTML-
       </div>
     </div>
 
+    <script src="js/confetti.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
